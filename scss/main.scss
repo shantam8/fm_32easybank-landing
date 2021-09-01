@@ -1,15 +1,63 @@
 @import "colors";
 @import "fonts";
+@import "mixins";
+@import "header";
+@import "mainSection";
+@import "footer";
+@import "keyFrames";
 
-
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-
-body{
-
-    font-family: 'Public Sans', sans-serif; // 3 4 7
+body {
+  font-family: "Public Sans", sans-serif; // 3 4 7
+  font-weight: 400;
+  position: relative;
 }
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  color: $darkBlue;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-weight: 300;
+  color: $darkBlue;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+}
+
+h3 {
+  font-size: 1.2rem;
+}
+h4 {
+  font-size: 1rem;
+}
+
+p {
+  color: $grayishBlue;
+  font-size: 0.8rem;
+  line-height: 20px;
+}
+
+.btnInvite{
+    @include btnRequestInvite;
+
+}
+

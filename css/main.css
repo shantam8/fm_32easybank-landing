@@ -1,1 +1,342 @@
-/* No CSS *//*# sourceMappingURL=main.css.map */
+@import url("https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;700&display=swap");
+header {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 1.5rem;
+}
+
+header #iconMobileMenu {
+  width: 20px;
+  height: 20px;
+  background-image: url("../images/icon-hamburger.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: transparent;
+  border: none;
+}
+
+header #mobileNavBgOverlay {
+  position: absolute;
+  top: 4.5rem;
+  left: 0;
+  width: 100vw;
+  height: 82vh;
+  z-index: 1;
+  padding: 1.5rem;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.7)), to(rgba(255, 255, 255, 0.5)));
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(255, 255, 255, 0.5));
+}
+
+header #mobileNavBgOverlay.displayNoneStartClass {
+  display: none;
+}
+
+header #mobileNavBgOverlay.closed {
+  -webkit-animation: fadeOut 1s forwards;
+          animation: fadeOut 1s forwards;
+}
+
+header #mobileNavBgOverlay.opened {
+  -webkit-animation: fadeIn 1s forwards;
+          animation: fadeIn 1s forwards;
+  display: block;
+}
+
+header #mobileNavBgOverlay nav {
+  text-align: center;
+  border-radius: 4px;
+  background-color: white;
+  padding: 1rem;
+  font-size: 1.2rem;
+}
+
+header #mobileNavBgOverlay nav ul li {
+  margin: 0.5rem 0;
+  padding: 0.5rem 0;
+}
+
+header #mobileNavBgOverlay nav ul li a {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+}
+
+header .btnInvite {
+  display: none;
+}
+
+main section#intro .imagesBlock {
+  position: relative;
+  width: 100%;
+  height: 18.5rem;
+  background-image: url("../images/bg-intro-mobile.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom;
+  overflow: hidden;
+}
+
+main section#intro .imagesBlock .mockup {
+  position: absolute;
+  width: 90%;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+
+main section#intro .imagesBlock .mockup img {
+  width: 100%;
+  height: 100%;
+}
+
+main section#intro .titleBlock {
+  padding: 2rem 2rem 3rem 2rem;
+  text-align: center;
+}
+
+main section#intro .titleBlock p,
+main section#intro .titleBlock h2 {
+  margin-top: 1rem;
+}
+
+main section#why {
+  padding: 2rem 2rem 3rem 2rem;
+  text-align: center;
+  background-color: #f3f4f6;
+}
+
+main section#why .titleBlock {
+  padding: 1rem 2rem;
+}
+
+main section#why .titleBlock p {
+  margin-top: 1rem;
+}
+
+main section#why .advantage .logo {
+  margin-top: 3rem;
+}
+
+main section#why .advantage h3,
+main section#why .advantage p {
+  margin-top: 1rem;
+}
+
+main section#articles {
+  padding: 2rem 2rem 3rem 2rem;
+  background-color: #fafafa;
+}
+
+main section#articles h2 {
+  text-align: center;
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+}
+
+main section#articles article {
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: white;
+  margin: 1rem 0;
+}
+
+main section#articles article .image {
+  width: 100%;
+  height: 12.5rem;
+  overflow: hidden;
+}
+
+main section#articles article .image img {
+  width: 100%;
+}
+
+main section#articles article .textBlock {
+  padding: 2rem;
+  padding-bottom: 3rem;
+}
+
+main section#articles article .textBlock .author {
+  font-size: 0.6rem;
+}
+
+main section#articles article .textBlock h4 {
+  margin: 0.8rem 0;
+}
+
+footer {
+  padding: 3rem 0 4rem 0;
+  background-color: #2d314d;
+  text-align: center;
+}
+
+footer .backgroudWrapper {
+  width: 220px;
+  margin: 0 auto;
+}
+
+footer .backgroudWrapper .gridBlockLeft .logo svg #svgMainColor {
+  fill: white;
+}
+
+footer .backgroudWrapper .gridBlockLeft .socialMedia {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 2rem 0;
+}
+
+footer .backgroudWrapper nav ul li {
+  margin: 0.5rem 0;
+  padding: 0.5rem;
+}
+
+footer .backgroudWrapper nav ul li a {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  color: white;
+}
+
+footer .backgroudWrapper .gridBlockRight p {
+  margin-top: 2rem;
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+    display: none;
+  }
+  1% {
+    display: block;
+    opacity: 0;
+  }
+  100% {
+    display: block;
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    display: none;
+  }
+  1% {
+    display: block;
+    opacity: 0;
+  }
+  100% {
+    display: block;
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeOut {
+  0% {
+    display: block;
+    opacity: 1;
+  }
+  99% {
+    display: block;
+    opacity: 0;
+  }
+  100% {
+    display: none;
+    opacity: 0;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    display: block;
+    opacity: 1;
+  }
+  99% {
+    display: block;
+    opacity: 0;
+  }
+  100% {
+    display: none;
+    opacity: 0;
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  font-family: "Public Sans", sans-serif;
+  font-weight: 400;
+  position: relative;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  color: #2d314d;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-weight: 300;
+  color: #2d314d;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+}
+
+h3 {
+  font-size: 1.2rem;
+}
+
+h4 {
+  font-size: 1rem;
+}
+
+p {
+  color: #9698a6;
+  font-size: 0.8rem;
+  line-height: 20px;
+}
+
+.btnInvite {
+  padding: 0.8rem 1.8rem;
+  color: white;
+  background-image: -webkit-gradient(linear, left top, right top, from(#31d35c), to(#2bb7da));
+  background-image: linear-gradient(to Right, #31d35c, #2bb7da);
+  border-radius: 1.5rem;
+  border: none;
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin-top: 2rem;
+}
+/*# sourceMappingURL=main.css.map */
