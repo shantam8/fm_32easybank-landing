@@ -54,10 +54,15 @@ p {
   color: $grayishBlue;
   font-size: 0.8rem;
   line-height: 20px;
+  
 }
 
 .btnInvite{
     @include btnRequestInvite;
 
+}
+
+.overflowHidden{
+  overflow: hidden;
 }
 

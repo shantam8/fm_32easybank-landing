@@ -5,6 +5,19 @@ header {
   align-items: center;
   padding: 1.5rem;
 
+  @media screen and (min-width: 40rem) {
+    padding: 2rem;
+  }
+
+  @media screen and (min-width: 50rem) {
+    padding: 0 2rem;
+  }
+
+  @media screen and (min-width: 75rem) {
+    width: 1200px;
+    margin: 0 auto;
+  }
+
   #iconMobileMenu {
     width: 20px;
     height: 20px;
@@ -13,6 +26,10 @@ header {
     background-size: cover;
     background-color: transparent;
     border: none;
+
+    @media screen and (min-width: 50rem) {
+      display: none;
+    }
   }
 
   #mobileNavBgOverlay {
@@ -20,7 +37,7 @@ header {
     top: 4.5rem;
     left: 0;
     width: 100vw;
-    height: 82vh;
+    height: 100vh;
 
     z-index: 1;
     padding: 1.5rem;
@@ -42,6 +59,7 @@ header {
       animation: fadeIn 1s forwards;
       display: block;
     }
+
     nav {
       text-align: center;
       border-radius: 4px;
@@ -64,7 +82,61 @@ header {
     }
   }
 
+  #desktopNavBlock {
+    display: none;
+    width: 350px;
+    height: 5rem;
+    align-items: center;
+
+    ul {
+      display: flex;
+      justify-content: space-evenly;
+      width: 100%;
+
+      li {
+        position: relative;
+        
+        &:hover {
+          cursor: pointer;
+                    
+          &::before {
+            position: absolute;
+            content: "";
+            background-color: red;
+            top: 2.6rem;
+            bottom: -1.9rem;
+            left: 0;
+            right: 0;
+            border-radius: 3px;
+            background-image: linear-gradient(
+              to Right,
+              $limeGreen,
+              $brightCyan
+            );
+          }
+        }
+
+        a {
+          color: $grayishBlue;
+          transition: all 0.1s ease-in-out;
+          &:active {
+            color: $darkBlue;
+          }
+        }
+      }
+    }
+
+    @media screen and (min-width: 50rem) {
+      display: flex;
+    }
+  }
+
   .btnInvite {
     display: none;
+
+    @media screen and (min-width: 50rem) {
+      display: initial;
+      margin-top: 0;
+    }
   }
 }
