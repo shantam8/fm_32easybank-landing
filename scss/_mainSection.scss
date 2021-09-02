@@ -1,5 +1,11 @@
 main {
   section#intro {
+    @media screen and (min-width: 50rem) {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    }
+
     .imagesBlock {
       position: relative;
       width: 100%;
@@ -23,6 +29,7 @@ main {
           height: 100%;
         }
       }
+
       @media screen and (min-width: 30rem) {
         height: 24rem;
       }
@@ -30,6 +37,11 @@ main {
       @media screen and (min-width: 40rem) {
         height: 29rem;
       }
+
+      @media screen and (min-width: 50rem) {
+        background-image: url("../images/bg-intro-desktop.svg");
+      }
+
     }
 
     .titleBlock {
@@ -51,6 +63,14 @@ main {
     .titleBlock {
       padding: 1rem 2rem;
 
+      @media screen and (min-width: 64rem) {
+        padding-left: 0;
+        text-align: left;
+      }
+
+      @include largestWidthAndCenterMediaQuery;
+
+
       p {
         margin-top: 1rem;
       }
@@ -65,11 +85,12 @@ main {
 
       @media screen and (min-width: 64rem) {
         justify-content: space-between;
+        text-align: left;
       }
-      @media screen and (min-width: 75rem) {
-        width: 1150px;
-        margin: 0 auto;
-      }
+
+      @include largestWidthAndCenterMediaQuery;
+
+
 
       .advantage {
         @media screen and (min-width: 40rem) {
@@ -101,6 +122,13 @@ main {
       margin-top: 3rem;
       margin-bottom: 1rem;
       text-align: center;
+
+      @media screen  and (min-width:64rem) {
+        text-align: left;
+      }
+
+      @include largestWidthAndCenterMediaQuery;
+
     }
 
     .articlesBox {
@@ -115,10 +143,8 @@ main {
         justify-content: space-between;
       }
 
-      @media screen and (min-width: 75rem) {
-        width: 1150px;
-        margin: 0 auto;
-      }
+      @include largestWidthAndCenterMediaQuery;
+
 
       article {
         margin: 1rem 0;
@@ -162,6 +188,15 @@ main {
 
           h4 {
             margin: 0.8rem 0;
+            transition: all 0.2s ease-in-out;
+
+            &:hover{
+              cursor: pointer;
+              transform: scale(1.1);
+            }
+            &:active{
+              color: $limeGreen;
+            }
           }
         }
       }

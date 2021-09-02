@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;700&display=swap");
 header {
+  padding: 1.5rem;
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -10,7 +11,6 @@ header {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 1.5rem;
 }
 
 @media screen and (min-width: 40rem) {
@@ -27,7 +27,7 @@ header {
 
 @media screen and (min-width: 75rem) {
   header {
-    width: 1200px;
+    width: 1150px;
     margin: 0 auto;
   }
 }
@@ -35,11 +35,11 @@ header {
 header #iconMobileMenu {
   width: 20px;
   height: 20px;
+  border: none;
   background-image: url("../images/icon-hamburger.svg");
   background-repeat: no-repeat;
   background-size: cover;
   background-color: transparent;
-  border: none;
 }
 
 @media screen and (min-width: 50rem) {
@@ -49,13 +49,13 @@ header #iconMobileMenu {
 }
 
 header #mobileNavBgOverlay {
-  position: absolute;
-  top: 4.5rem;
-  left: 0;
   width: 100vw;
   height: 100vh;
-  z-index: 1;
+  position: absolute;
   padding: 1.5rem;
+  top: 4.5rem;
+  left: 0;
+  z-index: 1;
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.7)), to(rgba(255, 255, 255, 0.5)));
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(255, 255, 255, 0.5));
 }
@@ -70,22 +70,30 @@ header #mobileNavBgOverlay.closed {
 }
 
 header #mobileNavBgOverlay.opened {
+  display: block;
   -webkit-animation: fadeIn 1s forwards;
           animation: fadeIn 1s forwards;
-  display: block;
 }
 
 header #mobileNavBgOverlay nav {
-  text-align: center;
+  padding: 1rem;
   border-radius: 4px;
   background-color: white;
-  padding: 1rem;
+  text-align: center;
   font-size: 1.2rem;
 }
 
 header #mobileNavBgOverlay nav ul li {
   margin: 0.5rem 0;
   padding: 0.5rem 0;
+}
+
+header #mobileNavBgOverlay nav ul li:hover a {
+  color: #31d35c;
+}
+
+header #mobileNavBgOverlay nav ul li:active a {
+  font-weight: 700;
 }
 
 header #mobileNavBgOverlay nav ul li a {
@@ -104,13 +112,13 @@ header #desktopNavBlock {
 }
 
 header #desktopNavBlock ul {
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
-  width: 100%;
 }
 
 header #desktopNavBlock ul li {
@@ -124,10 +132,9 @@ header #desktopNavBlock ul li:hover {
 header #desktopNavBlock ul li:hover::before {
   position: absolute;
   content: "";
-  background-color: red;
   top: 2.6rem;
-  bottom: -1.9rem;
   left: 0;
+  bottom: -1.9rem;
   right: 0;
   border-radius: 3px;
   background-image: -webkit-gradient(linear, left top, right top, from(#31d35c), to(#2bb7da));
@@ -158,8 +165,23 @@ header .btnInvite {
 
 @media screen and (min-width: 50rem) {
   header .btnInvite {
-    display: initial;
     margin-top: 0;
+    display: initial;
+  }
+}
+
+@media screen and (min-width: 50rem) {
+  main section#intro {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: row-reverse;
+            flex-direction: row-reverse;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
 }
 
@@ -200,6 +222,12 @@ main section#intro .imagesBlock .mockup img {
   }
 }
 
+@media screen and (min-width: 50rem) {
+  main section#intro .imagesBlock {
+    background-image: url("../images/bg-intro-desktop.svg");
+  }
+}
+
 main section#intro .titleBlock {
   padding: 2rem 2rem 3rem 2rem;
   text-align: center;
@@ -218,6 +246,20 @@ main section#why {
 
 main section#why .titleBlock {
   padding: 1rem 2rem;
+}
+
+@media screen and (min-width: 64rem) {
+  main section#why .titleBlock {
+    padding-left: 0;
+    text-align: left;
+  }
+}
+
+@media screen and (min-width: 75rem) {
+  main section#why .titleBlock {
+    width: 1150px;
+    margin: 0 auto;
+  }
 }
 
 main section#why .titleBlock p {
@@ -245,6 +287,7 @@ main section#why .titleBlock p {
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
+    text-align: left;
   }
 }
 
@@ -289,6 +332,19 @@ main section#articles h2 {
   margin-top: 3rem;
   margin-bottom: 1rem;
   text-align: center;
+}
+
+@media screen and (min-width: 64rem) {
+  main section#articles h2 {
+    text-align: left;
+  }
+}
+
+@media screen and (min-width: 75rem) {
+  main section#articles h2 {
+    width: 1150px;
+    margin: 0 auto;
+  }
 }
 
 @media screen and (min-width: 40rem) {
@@ -375,6 +431,18 @@ main section#articles .articlesBox article .textBlock .author {
 
 main section#articles .articlesBox article .textBlock h4 {
   margin: 0.8rem 0;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+main section#articles .articlesBox article .textBlock h4:hover {
+  cursor: pointer;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+main section#articles .articlesBox article .textBlock h4:active {
+  color: #31d35c;
 }
 
 footer {
@@ -418,6 +486,7 @@ footer .backgroudWrapper {
 @media screen and (min-width: 75rem) {
   footer .backgroudWrapper {
     width: 1150px;
+    margin: 0 auto;
   }
 }
 
@@ -457,6 +526,26 @@ footer .backgroudWrapper .gridBlockLeft .socialMedia {
   }
 }
 
+footer .backgroudWrapper .gridBlockLeft .socialMedia .logo {
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+footer .backgroudWrapper .gridBlockLeft .socialMedia .logo svg path {
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+footer .backgroudWrapper .gridBlockLeft .socialMedia .logo:hover {
+  cursor: pointer;
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+
+footer .backgroudWrapper .gridBlockLeft .socialMedia .logo:active svg path {
+  fill: #31d35c;
+}
+
 footer .backgroudWrapper nav:nth-child(1) {
   grid-area: navbar1;
 }
@@ -475,6 +564,18 @@ footer .backgroudWrapper nav:nth-child(2) {
 footer .backgroudWrapper nav ul li {
   margin: 0.5rem 0;
   padding: 0.5rem;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+footer .backgroudWrapper nav ul li:hover {
+  cursor: pointer;
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+
+footer .backgroudWrapper nav ul li:active a {
+  color: #31d35c;
 }
 
 @media screen and (min-width: 64rem) {
@@ -489,6 +590,8 @@ footer .backgroudWrapper nav ul li a {
   width: 100%;
   height: 100%;
   color: white;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
 footer .backgroudWrapper .gridBlockRight {
@@ -647,8 +750,6 @@ p {
 }
 
 .btnInvite:active {
-  -webkit-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
   background-image: -webkit-gradient(linear, right top, left top, from(#31d35c), to(#2bb7da));
   background-image: linear-gradient(to Left, #31d35c, #2bb7da);
 }

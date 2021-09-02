@@ -9,7 +9,6 @@
   font-size: 1.1rem;
   font-weight: 700;
 
-
   &:hover {
     cursor: pointer;
 
@@ -24,7 +23,6 @@
   }
 
   &:active {
-
     background-image: linear-gradient(to Left, $limeGreen, $brightCyan);
   }
 }
@@ -33,3 +31,9 @@
   padding: 2rem 2rem 3rem 2rem;
 }
 
+@mixin largestWidthAndCenterMediaQuery {
+  @media screen and (min-width: 75rem) {
+    width: 1150px;
+    margin: 0 auto;
+  }
+}
