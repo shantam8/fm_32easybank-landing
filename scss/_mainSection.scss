@@ -1,56 +1,95 @@
 main {
   section#intro {
-    @media screen and (min-width: 50rem) {
-    display: flex;
-    flex-direction: row-reverse;
-    align-items: center;
-    }
+    position: relative;
 
-    .imagesBlock {
-      position: relative;
-      width: 100%;
-      height: 18.5rem;
+    @include sectionPadding;
+
+    &::before {
+      position: absolute;
+      content: "";
       background-image: url("../images/bg-intro-mobile.svg");
       background-position: bottom;
       background-repeat: no-repeat;
       background-size: cover;
-      overflow: hidden;
+      top: 0;
+      left: 0;
+      bottom: 18rem;
+      right: 0;
+    }
 
-      .mockup {
-        position: absolute;
-        width: 90%;
-        margin: 0 auto;
-        left: 0;
-        right: 0;
+    &::after {
+      position: absolute;
+      content: "";
+      background-image: url("../images/image-mockups.png");
+      background-position: bottom;
+      background-repeat: no-repeat;
+      background-size: cover;
+      top: 0;
+      left: 0;
+      bottom: 18rem;
+      right: 0;
+    }
+
+    @media screen and (min-width: 50rem) {
+      &::before {
+        background-image: url("../images/bg-intro-desktop.svg");
+        background-position: left;
+        left: 53%;
         bottom: 0;
+      }
 
-        img {
+      &::after {
+        background-position: left bottom;
+        background-repeat: no-repeat;
+        background-size: cover;
+        top: -3rem;
+        left: 60%;
+        bottom: -5rem;
+        right: 0;
+      }
+    }
+
+    @media screen and (min-width: 64rem) {
+      &::after {
+        top: -3rem;
+        left: 62%;
+        bottom: -9rem;
+      }
+    }
+
+    .flexWrapper {
+      @include largestWidthAndCenterMediaQuery;
+
+      @media screen and (min-width: 50rem) {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .imagesBlock {
+        height: 26rem;
+
+        @media screen and (min-width: 30rem) {
+          height: 34rem;
+        }
+
+        @media screen and (min-width: 40rem) {
+          height: 40rem;
+        }
+
+        @media screen and (min-width: 50rem) {
           width: 100%;
-          height: 100%;
+          height: 16rem;
         }
       }
 
-      @media screen and (min-width: 30rem) {
-        height: 24rem;
-      }
+      .titleBlock {
+        text-align: center;
 
-      @media screen and (min-width: 40rem) {
-        height: 29rem;
-      }
-
-      @media screen and (min-width: 50rem) {
-        background-image: url("../images/bg-intro-desktop.svg");
-      }
-
-    }
-
-    .titleBlock {
-      @include sectionPadding;
-      text-align: center;
-
-      p,
-      h2 {
-        margin-top: 1rem;
+        @media screen and (min-width: 64rem) {
+          text-align: left;
+        }
       }
     }
   }
@@ -70,7 +109,6 @@ main {
 
       @include largestWidthAndCenterMediaQuery;
 
-
       p {
         margin-top: 1rem;
       }
@@ -89,8 +127,6 @@ main {
       }
 
       @include largestWidthAndCenterMediaQuery;
-
-
 
       .advantage {
         @media screen and (min-width: 40rem) {
@@ -123,12 +159,11 @@ main {
       margin-bottom: 1rem;
       text-align: center;
 
-      @media screen  and (min-width:64rem) {
+      @media screen and (min-width: 64rem) {
         text-align: left;
       }
 
       @include largestWidthAndCenterMediaQuery;
-
     }
 
     .articlesBox {
@@ -144,7 +179,6 @@ main {
       }
 
       @include largestWidthAndCenterMediaQuery;
-
 
       article {
         margin: 1rem 0;
@@ -190,11 +224,11 @@ main {
             margin: 0.8rem 0;
             transition: all 0.2s ease-in-out;
 
-            &:hover{
+            &:hover {
               cursor: pointer;
               transform: scale(1.1);
             }
-            &:active{
+            &:active {
               color: $limeGreen;
             }
           }

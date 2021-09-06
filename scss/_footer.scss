@@ -3,6 +3,11 @@ footer {
   background-color: $darkBlue;
   text-align: center;
 
+  @media screen and(min-width:64rem) {
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+
   .backgroudWrapper {
     width: 220px;
     margin: 0 auto;
@@ -15,20 +20,19 @@ footer {
       grid-template-rows: repeat(3, auto);
       grid-template-areas:
         "logoAndNav logoAndNav"
-        "navbar1 navbar2"
+        "navbar2 navbar1"
         "btnAndCopyright btnAndCopyright";
     }
 
     @media screen and(min-width:64rem) {
-      width: 90%;
+      width: 100%;
       grid-template-columns: repeat(5, 1fr);
       grid-template-rows: 1fr;
-      grid-template-areas: "logoAndNav navbar1 navbar2 . btnAndCopyright";
+      grid-template-areas: "logoAndNav navbar2 navbar1 . btnAndCopyright";
       justify-items: baseline;
     }
 
     @include largestWidthAndCenterMediaQuery;
-
 
     .gridBlockLeft {
       grid-area: logoAndNav;
@@ -63,7 +67,8 @@ footer {
             transition: all 0.3s ease-in-out;
           }
 
-          &:hover {
+          &:hover,
+          &:focus {
             cursor: pointer;
             transform: scale(1.2);
           }
@@ -95,11 +100,19 @@ footer {
         li {
           margin: 0.5rem 0;
           padding: 0.5rem;
-          transition: all 0.3s ease-in-out;
+          transition: all 0.1s ease-in-out;
 
-          &:hover {
+          &:hover,
+          &:focus {
             cursor: pointer;
-            transform: scale(1.2);
+
+            a {
+              transform: scale(1.2);
+            }
+          }
+
+          &:focus {
+            outline: 1px solid limegreen;
           }
 
           &:active {

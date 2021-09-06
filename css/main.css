@@ -1,6 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;700&display=swap");
 header {
-  padding: 1.5rem;
+  position: relative;
+  background-color: white;
+  z-index: 5;
+}
+
+header .backgroundWrapper {
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -11,28 +16,37 @@ header {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  padding: 1.5rem;
 }
 
 @media screen and (min-width: 40rem) {
-  header {
-    padding: 2rem;
+  header .backgroundWrapper {
+    padding: 2rem 3rem;
   }
 }
 
 @media screen and (min-width: 50rem) {
-  header {
-    padding: 0 2rem;
+  header .backgroundWrapper {
+    padding: 0 3rem;
+  }
+}
+
+@media screen and (min-width: 64rem) {
+  header .backgroundWrapper {
+    padding: 0 4rem;
   }
 }
 
 @media screen and (min-width: 75rem) {
-  header {
-    width: 1150px;
+  header .backgroundWrapper {
+    width: 1024px;
     margin: 0 auto;
+    padding-left: 0;
+    padding-right: 0;
   }
 }
 
-header #iconMobileMenu {
+header .backgroundWrapper #iconMobileMenu {
   width: 20px;
   height: 20px;
   border: none;
@@ -43,39 +57,39 @@ header #iconMobileMenu {
 }
 
 @media screen and (min-width: 50rem) {
-  header #iconMobileMenu {
+  header .backgroundWrapper #iconMobileMenu {
     display: none;
   }
 }
 
-header #mobileNavBgOverlay {
+header .backgroundWrapper #mobileNavBgOverlay {
   width: 100vw;
   height: 100vh;
   position: absolute;
   padding: 1.5rem;
-  top: 4.5rem;
+  top: 5.5rem;
   left: 0;
   z-index: 1;
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.7)), to(rgba(255, 255, 255, 0.5)));
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(255, 255, 255, 0.5));
 }
 
-header #mobileNavBgOverlay.displayNoneStartClass {
+header .backgroundWrapper #mobileNavBgOverlay.displayNoneStartClass {
   display: none;
 }
 
-header #mobileNavBgOverlay.closed {
+header .backgroundWrapper #mobileNavBgOverlay.closed {
   -webkit-animation: fadeOut 1s forwards;
           animation: fadeOut 1s forwards;
 }
 
-header #mobileNavBgOverlay.opened {
+header .backgroundWrapper #mobileNavBgOverlay.opened {
   display: block;
   -webkit-animation: fadeIn 1s forwards;
           animation: fadeIn 1s forwards;
 }
 
-header #mobileNavBgOverlay nav {
+header .backgroundWrapper #mobileNavBgOverlay nav {
   padding: 1rem;
   border-radius: 4px;
   background-color: white;
@@ -83,26 +97,26 @@ header #mobileNavBgOverlay nav {
   font-size: 1.2rem;
 }
 
-header #mobileNavBgOverlay nav ul li {
+header .backgroundWrapper #mobileNavBgOverlay nav ul li {
   margin: 0.5rem 0;
   padding: 0.5rem 0;
 }
 
-header #mobileNavBgOverlay nav ul li:hover a {
+header .backgroundWrapper #mobileNavBgOverlay nav ul li:hover a {
   color: #31d35c;
 }
 
-header #mobileNavBgOverlay nav ul li:active a {
+header .backgroundWrapper #mobileNavBgOverlay nav ul li:active a {
   font-weight: 700;
 }
 
-header #mobileNavBgOverlay nav ul li a {
+header .backgroundWrapper #mobileNavBgOverlay nav ul li a {
   display: inline-block;
   width: 100%;
   height: 100%;
 }
 
-header #desktopNavBlock {
+header .backgroundWrapper #desktopNavBlock {
   display: none;
   width: 350px;
   height: 5rem;
@@ -111,7 +125,7 @@ header #desktopNavBlock {
           align-items: center;
 }
 
-header #desktopNavBlock ul {
+header .backgroundWrapper #desktopNavBlock ul {
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -121,15 +135,15 @@ header #desktopNavBlock ul {
           justify-content: space-evenly;
 }
 
-header #desktopNavBlock ul li {
+header .backgroundWrapper #desktopNavBlock ul li {
   position: relative;
 }
 
-header #desktopNavBlock ul li:hover {
+header .backgroundWrapper #desktopNavBlock ul li:hover {
   cursor: pointer;
 }
 
-header #desktopNavBlock ul li:hover::before {
+header .backgroundWrapper #desktopNavBlock ul li:hover::before {
   position: absolute;
   content: "";
   top: 2.6rem;
@@ -141,37 +155,115 @@ header #desktopNavBlock ul li:hover::before {
   background-image: linear-gradient(to Right, #31d35c, #2bb7da);
 }
 
-header #desktopNavBlock ul li a {
+header .backgroundWrapper #desktopNavBlock ul li a {
   color: #9698a6;
   -webkit-transition: all 0.1s ease-in-out;
   transition: all 0.1s ease-in-out;
 }
 
-header #desktopNavBlock ul li a:active {
+header .backgroundWrapper #desktopNavBlock ul li a:active {
   color: #2d314d;
 }
 
 @media screen and (min-width: 50rem) {
-  header #desktopNavBlock {
+  header .backgroundWrapper #desktopNavBlock {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
   }
 }
 
-header .btnInvite {
+header .backgroundWrapper .btnInvite {
   display: none;
 }
 
 @media screen and (min-width: 50rem) {
-  header .btnInvite {
+  header .backgroundWrapper .btnInvite {
     margin-top: 0;
     display: initial;
   }
 }
 
-@media screen and (min-width: 50rem) {
+main section#intro {
+  position: relative;
+  padding: 2rem 2rem 3rem 2rem;
+}
+
+@media screen and (min-width: 40rem) {
   main section#intro {
+    padding: 3rem 3rem 4rem 3rem;
+  }
+}
+
+@media screen and (min-width: 64rem) {
+  main section#intro {
+    padding: 4rem 4rem 5rem 4rem;
+  }
+}
+
+main section#intro::before {
+  position: absolute;
+  content: "";
+  background-image: url("../images/bg-intro-mobile.svg");
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+  top: 0;
+  left: 0;
+  bottom: 18rem;
+  right: 0;
+}
+
+main section#intro::after {
+  position: absolute;
+  content: "";
+  background-image: url("../images/image-mockups.png");
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+  top: 0;
+  left: 0;
+  bottom: 18rem;
+  right: 0;
+}
+
+@media screen and (min-width: 50rem) {
+  main section#intro::before {
+    background-image: url("../images/bg-intro-desktop.svg");
+    background-position: left;
+    left: 53%;
+    bottom: 0;
+  }
+  main section#intro::after {
+    background-position: left bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+    top: -3rem;
+    left: 60%;
+    bottom: -5rem;
+    right: 0;
+  }
+}
+
+@media screen and (min-width: 64rem) {
+  main section#intro::after {
+    top: -3rem;
+    left: 62%;
+    bottom: -9rem;
+  }
+}
+
+@media screen and (min-width: 75rem) {
+  main section#intro .flexWrapper {
+    width: 1024px;
+    margin: 0 auto;
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@media screen and (min-width: 50rem) {
+  main section#intro .flexWrapper {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -179,69 +271,64 @@ header .btnInvite {
     -webkit-box-direction: reverse;
         -ms-flex-direction: row-reverse;
             flex-direction: row-reverse;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
   }
 }
 
-main section#intro .imagesBlock {
-  position: relative;
-  width: 100%;
-  height: 18.5rem;
-  background-image: url("../images/bg-intro-mobile.svg");
-  background-position: bottom;
-  background-repeat: no-repeat;
-  background-size: cover;
-  overflow: hidden;
-}
-
-main section#intro .imagesBlock .mockup {
-  position: absolute;
-  width: 90%;
-  margin: 0 auto;
-  left: 0;
-  right: 0;
-  bottom: 0;
-}
-
-main section#intro .imagesBlock .mockup img {
-  width: 100%;
-  height: 100%;
+main section#intro .flexWrapper .imagesBlock {
+  height: 26rem;
 }
 
 @media screen and (min-width: 30rem) {
-  main section#intro .imagesBlock {
-    height: 24rem;
+  main section#intro .flexWrapper .imagesBlock {
+    height: 34rem;
   }
 }
 
 @media screen and (min-width: 40rem) {
-  main section#intro .imagesBlock {
-    height: 29rem;
+  main section#intro .flexWrapper .imagesBlock {
+    height: 40rem;
   }
 }
 
 @media screen and (min-width: 50rem) {
-  main section#intro .imagesBlock {
-    background-image: url("../images/bg-intro-desktop.svg");
+  main section#intro .flexWrapper .imagesBlock {
+    width: 100%;
+    height: 16rem;
   }
 }
 
-main section#intro .titleBlock {
-  padding: 2rem 2rem 3rem 2rem;
+main section#intro .flexWrapper .titleBlock {
   text-align: center;
 }
 
-main section#intro .titleBlock p,
-main section#intro .titleBlock h2 {
-  margin-top: 1rem;
+@media screen and (min-width: 64rem) {
+  main section#intro .flexWrapper .titleBlock {
+    text-align: left;
+  }
 }
 
 main section#why {
   padding: 2rem 2rem 3rem 2rem;
   text-align: center;
   background-color: #f3f4f6;
+}
+
+@media screen and (min-width: 40rem) {
+  main section#why {
+    padding: 3rem 3rem 4rem 3rem;
+  }
+}
+
+@media screen and (min-width: 64rem) {
+  main section#why {
+    padding: 4rem 4rem 5rem 4rem;
+  }
 }
 
 main section#why .titleBlock {
@@ -257,8 +344,10 @@ main section#why .titleBlock {
 
 @media screen and (min-width: 75rem) {
   main section#why .titleBlock {
-    width: 1150px;
+    width: 1024px;
     margin: 0 auto;
+    padding-left: 0;
+    padding-right: 0;
   }
 }
 
@@ -293,8 +382,10 @@ main section#why .titleBlock p {
 
 @media screen and (min-width: 75rem) {
   main section#why .flexWrapper {
-    width: 1150px;
+    width: 1024px;
     margin: 0 auto;
+    padding-left: 0;
+    padding-right: 0;
   }
 }
 
@@ -328,6 +419,18 @@ main section#articles {
   background-color: #fafafa;
 }
 
+@media screen and (min-width: 40rem) {
+  main section#articles {
+    padding: 3rem 3rem 4rem 3rem;
+  }
+}
+
+@media screen and (min-width: 64rem) {
+  main section#articles {
+    padding: 4rem 4rem 5rem 4rem;
+  }
+}
+
 main section#articles h2 {
   margin-top: 3rem;
   margin-bottom: 1rem;
@@ -342,8 +445,10 @@ main section#articles h2 {
 
 @media screen and (min-width: 75rem) {
   main section#articles h2 {
-    width: 1150px;
+    width: 1024px;
     margin: 0 auto;
+    padding-left: 0;
+    padding-right: 0;
   }
 }
 
@@ -373,8 +478,10 @@ main section#articles h2 {
 
 @media screen and (min-width: 75rem) {
   main section#articles .articlesBox {
-    width: 1150px;
+    width: 1024px;
     margin: 0 auto;
+    padding-left: 0;
+    padding-right: 0;
   }
 }
 
@@ -451,6 +558,13 @@ footer {
   text-align: center;
 }
 
+@media screen and (min-width: 64rem) {
+  footer {
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+}
+
 footer .backgroudWrapper {
   width: 220px;
   margin: 0 auto;
@@ -467,26 +581,28 @@ footer .backgroudWrapper {
         grid-template-columns: 1fr 1fr;
     -ms-grid-rows: (auto)[3];
         grid-template-rows: repeat(3, auto);
-        grid-template-areas: "logoAndNav logoAndNav" "navbar1 navbar2" "btnAndCopyright btnAndCopyright";
+        grid-template-areas: "logoAndNav logoAndNav" "navbar2 navbar1" "btnAndCopyright btnAndCopyright";
   }
 }
 
 @media screen and (min-width: 64rem) {
   footer .backgroudWrapper {
-    width: 90%;
+    width: 100%;
     -ms-grid-columns: (1fr)[5];
         grid-template-columns: repeat(5, 1fr);
     -ms-grid-rows: 1fr;
         grid-template-rows: 1fr;
-        grid-template-areas: "logoAndNav navbar1 navbar2 . btnAndCopyright";
+        grid-template-areas: "logoAndNav navbar2 navbar1 . btnAndCopyright";
     justify-items: baseline;
   }
 }
 
 @media screen and (min-width: 75rem) {
   footer .backgroudWrapper {
-    width: 1150px;
+    width: 1024px;
     margin: 0 auto;
+    padding-left: 0;
+    padding-right: 0;
   }
 }
 
@@ -536,7 +652,7 @@ footer .backgroudWrapper .gridBlockLeft .socialMedia .logo svg path {
   transition: all 0.3s ease-in-out;
 }
 
-footer .backgroudWrapper .gridBlockLeft .socialMedia .logo:hover {
+footer .backgroudWrapper .gridBlockLeft .socialMedia .logo:hover, footer .backgroudWrapper .gridBlockLeft .socialMedia .logo:focus {
   cursor: pointer;
   -webkit-transform: scale(1.2);
           transform: scale(1.2);
@@ -564,14 +680,21 @@ footer .backgroudWrapper nav:nth-child(2) {
 footer .backgroudWrapper nav ul li {
   margin: 0.5rem 0;
   padding: 0.5rem;
-  -webkit-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
 }
 
-footer .backgroudWrapper nav ul li:hover {
+footer .backgroudWrapper nav ul li:hover, footer .backgroudWrapper nav ul li:focus {
   cursor: pointer;
+}
+
+footer .backgroudWrapper nav ul li:hover a, footer .backgroudWrapper nav ul li:focus a {
   -webkit-transform: scale(1.2);
           transform: scale(1.2);
+}
+
+footer .backgroudWrapper nav ul li:focus {
+  outline: 1px solid limegreen;
 }
 
 footer .backgroudWrapper nav ul li:active a {
@@ -736,22 +859,18 @@ p {
   font-weight: 700;
 }
 
-.btnInvite:hover {
+.btnInvite:hover, .btnInvite:focus {
   cursor: pointer;
+  outline: 2px solid limegreen;
 }
 
-.btnInvite:hover::before {
+.btnInvite:active::before {
   position: absolute;
   content: "";
   inset: 0;
   border-radius: 1.5rem;
   background-color: white;
   opacity: 0.3;
-}
-
-.btnInvite:active {
-  background-image: -webkit-gradient(linear, right top, left top, from(#31d35c), to(#2bb7da));
-  background-image: linear-gradient(to Left, #31d35c, #2bb7da);
 }
 
 .overflowHidden {

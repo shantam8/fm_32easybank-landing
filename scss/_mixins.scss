@@ -9,10 +9,25 @@
   font-size: 1.1rem;
   font-weight: 700;
 
-  &:hover {
+  &:hover,
+  &:focus {
     cursor: pointer;
+    outline: 2px solid limegreen;
 
-    &::before {
+    // &::before {
+    //   position: absolute;
+    //   content: "";
+    //   inset: 0;
+    //   border-radius: 1.5rem;
+    //   background-color: $white;
+    //   opacity: 0.3;
+    // }
+  }
+
+  &:active {
+    //background-image: linear-gradient(to Left, $limeGreen, $brightCyan);
+    &::before{
+
       position: absolute;
       content: "";
       inset: 0;
@@ -21,19 +36,25 @@
       opacity: 0.3;
     }
   }
-
-  &:active {
-    background-image: linear-gradient(to Left, $limeGreen, $brightCyan);
-  }
 }
 
 @mixin sectionPadding {
   padding: 2rem 2rem 3rem 2rem;
+
+  @media screen and (min-width: 40rem) {
+    padding: 3rem 3rem 4rem 3rem;
+  }
+
+  @media screen and (min-width: 64rem) {
+    padding: 4rem 4rem 5rem 4rem;
+  }
 }
 
 @mixin largestWidthAndCenterMediaQuery {
   @media screen and (min-width: 75rem) {
-    width: 1150px;
+    width: 1024px;
     margin: 0 auto;
+    padding-left: 0;
+    padding-right: 0;
   }
 }

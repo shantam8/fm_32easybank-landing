@@ -1,151 +1,161 @@
 header {
-  padding: 1.5rem;
   position: relative;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  background-color: $white;
+  z-index: 5;
 
-  @media screen and (min-width: 40rem) {
-    padding: 2rem;
-  }
-
-  @media screen and (min-width: 50rem) {
-    padding: 0 2rem;
-  }
-
-  @include largestWidthAndCenterMediaQuery;
-
-
-  #iconMobileMenu {
-    width: 20px;
-    height: 20px;
-    border: none;
-    background-image: url("../images/icon-hamburger.svg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-color: transparent;
-
-    @media screen and (min-width: 50rem) {
-      display: none;
-    }
-  }
-
-  #mobileNavBgOverlay {
-    width: 100vw;
-    height: 100vh;
-    position: absolute;
+  .backgroundWrapper {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     padding: 1.5rem;
-    top: 4.5rem;
-    left: 0;
-    z-index: 1;
 
-    background: linear-gradient(
-      to bottom,
-      rgba(0, 0, 0, 0.7),
-      rgba(255, 255, 255, 0.5)
-    );
-    &.displayNoneStartClass {
-      display: none;
+    @media screen and (min-width: 40rem) {
+      padding: 2rem 3rem;
     }
 
-    &.closed {
-      animation: fadeOut 1s forwards;
+    @media screen and(min-width:50rem) {
+      padding: 0 3rem;
     }
 
-    &.opened {
-      display: block;
-      animation: fadeIn 1s forwards;
+    @media screen and(min-width:64rem) {
+      padding: 0 4rem;
     }
 
-    nav {
-      padding: 1rem;
-      border-radius: 4px;
-      background-color: $white;
-      text-align: center;
-      font-size: 1.2rem;
+    @include largestWidthAndCenterMediaQuery;
 
-      ul {
-        li {
-          margin: 0.5rem 0;
-          padding: 0.5rem 0;
+    #iconMobileMenu {
+      width: 20px;
+      height: 20px;
+      border: none;
+      background-image: url("../images/icon-hamburger.svg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-color: transparent;
+      
 
-          &:hover {
+      @media screen and (min-width: 50rem) {
+        display: none;
+      }
+    }
+
+    #mobileNavBgOverlay {
+      width: 100vw;
+      height: 100vh;
+      position: absolute;
+      padding: 1.5rem;
+      top: 5.5rem;
+      left: 0;
+      z-index: 1;
+
+      background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.7),
+        rgba(255, 255, 255, 0.5)
+      );
+      &.displayNoneStartClass {
+        display: none;
+      }
+
+      &.closed {
+        animation: fadeOut 1s forwards;
+      }
+
+      &.opened {
+        display: block;
+        animation: fadeIn 1s forwards;
+      }
+
+      nav {
+        padding: 1rem;
+        border-radius: 4px;
+        background-color: $white;
+        text-align: center;
+        font-size: 1.2rem;
+
+        ul {
+          li {
+            margin: 0.5rem 0;
+            padding: 0.5rem 0;
+
+            &:hover {
+              a {
+                color: $limeGreen;
+              }
+            }
+
+            &:active {
+              a {
+                font-weight: 700;
+              }
+            }
+
             a {
-              color: $limeGreen;
+              display: inline-block;
+              width: 100%;
+              height: 100%;
             }
           }
+        }
+      }
+    }
 
-          &:active {
-            a {
-              font-weight: 700;
+    #desktopNavBlock {
+      display: none;
+      width: 350px;
+      height: 5rem;
+      align-items: center;
+
+      ul {
+        width: 100%;
+        display: flex;
+        justify-content: space-evenly;
+
+        li {
+          position: relative;
+
+          &:hover {
+            cursor: pointer;
+
+            &::before {
+              position: absolute;
+              content: "";
+              top: 2.6rem;
+              left: 0;
+              bottom: -1.9rem;
+              right: 0;
+              border-radius: 3px;
+              background-image: linear-gradient(
+                to Right,
+                $limeGreen,
+                $brightCyan
+              );
             }
           }
 
           a {
-            display: inline-block;
-            width: 100%;
-            height: 100%;
+            color: $grayishBlue;
+            transition: all 0.1s ease-in-out;
+
+            &:active {
+              color: $darkBlue;
+            }
           }
         }
       }
-    }
-  }
 
-  #desktopNavBlock {
-    display: none;
-    width: 350px;
-    height: 5rem;
-    align-items: center;
-
-    ul {
-      width: 100%;
-      display: flex;
-      justify-content: space-evenly;
-
-      li {
-        position: relative;
-
-        &:hover {
-          cursor: pointer;
-
-          &::before {
-            position: absolute;
-            content: "";
-            top: 2.6rem;
-            left: 0;
-            bottom: -1.9rem;
-            right: 0;
-            border-radius: 3px;
-            background-image: linear-gradient(
-              to Right,
-              $limeGreen,
-              $brightCyan
-            );
-          }
-        }
-
-        a {
-          color: $grayishBlue;
-          transition: all 0.1s ease-in-out;
-
-          &:active {
-            color: $darkBlue;
-          }
-        }
+      @media screen and (min-width: 50rem) {
+        display: flex;
       }
     }
 
-    @media screen and (min-width: 50rem) {
-      display: flex;
-    }
-  }
+    .btnInvite {
+      display: none;
 
-  .btnInvite {
-    display: none;
-
-    @media screen and (min-width: 50rem) {
-      margin-top: 0;
-      display: initial;
+      @media screen and (min-width: 50rem) {
+        margin-top: 0;
+        display: initial;
+      }
     }
   }
 }

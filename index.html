@@ -10,20 +10,41 @@
       type="image/png"
       sizes="32x32"
       href="./images/favicon-32x32.png"
-      />
-      <link rel="stylesheet" href="/css/main.css" />
-      <script defer src="./js/main.js"></script>
-      <title>Frontend Mentor | Easybank landing page</title>
+    />
+    <link rel="stylesheet" href="/css/main.css" />
+    <script defer src="./js/main.js"></script>
+    <title>Frontend Mentor | Easybank landing page</title>
   </head>
   <body>
     <header>
-      <div class="logo">
-        <img src="./images/logo.svg" alt="logo" />
-      </div>
-      
-      <button id="iconMobileMenu"></button>
-      <div id="mobileNavBgOverlay" class="displayNoneStartClass">
-        <nav id="mobileNavBlock">
+      <div class="backgroundWrapper">
+        <div class="logo">
+          <img src="./images/logo.svg" alt="logo" />
+        </div>
+
+        <button id="iconMobileMenu" aria-label="open mobile menu"></button>
+        <div id="mobileNavBgOverlay" class="displayNoneStartClass">
+          <nav id="mobileNavBlock">
+            <ul>
+              <li>
+                <a href="#">Home</a>
+              </li>
+              <li>
+                <a href="#">About</a>
+              </li>
+              <li>
+                <a href="#">Contact</a>
+              </li>
+              <li>
+                <a href="#">Blog</a>
+              </li>
+              <li>
+                <a href="#">Careers</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <nav id="desktopNavBlock">
           <ul>
             <li>
               <a href="#">Home</a>
@@ -42,45 +63,24 @@
             </li>
           </ul>
         </nav>
+        <button class="btnInvite">Request Invite</button>
       </div>
-      <nav id="desktopNavBlock">
-        <ul>
-          <li>
-            <a href="#">Home</a>
-          </li>
-          <li>
-            <a href="#">About</a>
-          </li>
-          <li>
-            <a href="#">Contact</a>
-          </li>
-          <li>
-            <a href="#">Blog</a>
-          </li>
-          <li>
-            <a href="#">Careers</a>
-          </li>
-        </ul>
-      </nav>
-      <button class="btnInvite">Request Invite</button>
     </header>
 
     <main>
       <section id="intro">
-        <div class="imagesBlock">
-          <div class="mockup">
-            <img src="./images/image-mockups.png" alt="smartphone mockup" />
-          </div>
-        </div>
-        <div class="titleBlock">
-          <h1>Next generation digital banking</h1>
-          <p>
-            Take your financial life online. Your Easybank account will be a
-            one-stop-shop for spending, saving, budgeting, investing, and much
-            more.
-          </p>
+        <div class="flexWrapper">
+          <div class="imagesBlock"></div>
+          <div class="titleBlock">
+            <h1>Next generation digital banking</h1>
+            <p>
+              Take your financial life online. Your Easybank account will be a
+              one-stop-shop for spending, saving, budgeting, investing, and much
+              more.
+            </p>
 
-          <button class="btnInvite">Request Invite</button>
+            <button class="btnInvite">Request Invite</button>
+          </div>
         </div>
       </section>
 
@@ -146,7 +146,7 @@
             </div>
             <div class="textBlock">
               <p class="author">By Claire Robinson</p>
-              <h4>Receive money in any currency with no fees</h4>
+              <h4 tabindex="0">Receive money in any currency with no fees</h4>
               <p>
                 The world is getting smaller and we’re becoming more mobile. So
                 why should you be forced to only receive money in a single …
@@ -160,7 +160,7 @@
             </div>
             <div class="textBlock">
               <p class="author">By Wilson Hutton</p>
-              <h4>Treat yourself without worrying about money</h4>
+              <h4 tabindex="0">Treat yourself without worrying about money</h4>
               <p>
                 Our simple budgeting feature allows you to separate out your
                 spending and set realistic limits each month. That means you …
@@ -173,7 +173,7 @@
             </div>
             <div class="textBlock">
               <p class="author">By Wilson Hutton</p>
-              <h4>Take your Easybank card wherever you go</h4>
+              <h4 tabindex="0">Take your Easybank card wherever you go</h4>
               <p>
                 We want you to enjoy your travels. This is why we don’t charge
                 any fees on purchases while you’re abroad. We’ll even show you …
@@ -187,7 +187,7 @@
             </div>
             <div class="textBlock">
               <p class="author">By Claire Robinson</p>
-              <h4>Our invite-only Beta accounts are now live!</h4>
+              <h4 tabindex="0">Our invite-only Beta accounts are now live!</h4>
               <p>
                 After a lot of hard work by the whole team, we’re excited to
                 launch our closed beta. It’s easy to request an invite through
@@ -239,7 +239,7 @@
           </div>
 
           <div class="socialMedia">
-            <div class="logo">
+            <div class="logo" tabindex="0" aria-label="link to our facebook page">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 20 20"
@@ -252,7 +252,7 @@
                 />
               </svg>
             </div>
-            <div class="logo">
+            <div class="logo" tabindex="0" aria-label="link to our youtube page">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 20 20"
@@ -265,7 +265,7 @@
                 />
               </svg>
             </div>
-            <div class="logo">
+            <div class="logo" tabindex="0" aria-label="link to our twitter page">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 20 20"
@@ -278,7 +278,7 @@
                 />
               </svg>
             </div>
-            <div class="logo">
+            <div class="logo" tabindex="0" aria-label="link to our pinterest page">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 20 20"
@@ -291,7 +291,7 @@
                 />
               </svg>
             </div>
-            <div class="logo">
+            <div class="logo" tabindex="0" aria-label="link to our instagram page">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 20 20"
