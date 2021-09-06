@@ -8,7 +8,7 @@ function toggleMobileMenu() {
     mobileMenuOverlay.classList.remove("opened");
     mobileMenuOverlay.classList.add("closed");
     document.querySelector("body").classList.remove("overflowHidden");
-    btnMobileMenu.style.backgroundImage = "url('../images/icon-hamburger.svg')";
+    btnMobileMenu.style.backgroundImage = "url('./images/icon-hamburger.svg')";
     btnMobileMenu.setAttribute("aria-label", "open   mobile menu");;
     isMobileMenuOpen = !isMobileMenuOpen;
   } else {
@@ -16,7 +16,7 @@ function toggleMobileMenu() {
     mobileMenuOverlay.classList.remove("closed");
     mobileMenuOverlay.classList.add("opened");
     document.querySelector("body").classList.add("overflowHidden");
-    btnMobileMenu.style.backgroundImage = "url('../images/icon-close.svg')";
+    btnMobileMenu.style.backgroundImage = "url('./images/icon-close.svg')";
     btnMobileMenu.setAttribute("aria-label", "close mobile menu");;
     isMobileMenuOpen = !isMobileMenuOpen;
   }
