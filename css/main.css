@@ -642,23 +642,23 @@ footer .backgroudWrapper .gridBlockLeft .socialMedia {
   }
 }
 
-footer .backgroudWrapper .gridBlockLeft .socialMedia .logo {
+footer .backgroudWrapper .gridBlockLeft .socialMedia a {
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
 }
 
-footer .backgroudWrapper .gridBlockLeft .socialMedia .logo svg path {
+footer .backgroudWrapper .gridBlockLeft .socialMedia a svg path {
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
 }
 
-footer .backgroudWrapper .gridBlockLeft .socialMedia .logo:hover, footer .backgroudWrapper .gridBlockLeft .socialMedia .logo:focus {
+footer .backgroudWrapper .gridBlockLeft .socialMedia a:hover, footer .backgroudWrapper .gridBlockLeft .socialMedia a:focus {
   cursor: pointer;
   -webkit-transform: scale(1.2);
           transform: scale(1.2);
 }
 
-footer .backgroudWrapper .gridBlockLeft .socialMedia .logo:active svg path {
+footer .backgroudWrapper .gridBlockLeft .socialMedia a:active svg path {
   fill: #31d35c;
 }
 
